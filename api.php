@@ -6,7 +6,7 @@ header("Access-Control-Allow-Headers: Origin, Content-Type, Authorization, Accep
 header("Content-Type: application/json; charset=utf-8");
 header("Content-Type: multipart/form-data");
 
-$conn = mysqli_connect('localhost','u593237675_sukaa','Suhaimi@26','u593237675_buku555');
+$conn = mysqli_connect('localhost','username','password','databasename');
 
 $data = json_decode(file_get_contents('php://input'), true);
 
