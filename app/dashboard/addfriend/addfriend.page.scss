@@ -1,0 +1,32 @@
+ion-searchbar {
+  --border-radius: 25px;
+  --clear-button-color: #f79d00;
+  --icon-color: #f79d00;
+  --box-shadow: transparent;
+}
+
+ion-title {
+  text-align: center;
+  color: #f79d00;
+}
+
+ion-content {
+  --background: #f6f6f6;
+}
+
+ion-toolbar {
+  --background: white;
+
+  ion-button {
+    color: #f79d00;
+  }
+}
+
+#container {
+  text-align: center;
+  padding: 80px 70px 10px 70px;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  top: 50%;
+}

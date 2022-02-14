@@ -1,0 +1,26 @@
+ion-title {
+  color: #f79d00;
+}
+
+ion-content {
+  --background: #f6f6f6;
+}
+
+ion-toolbar {
+  --background: white;
+
+  ion-button {
+    color: #f79d00;
+  }
+}
+
+
+.addbtn {
+  width: 97%;
+  height: 50px;
+  --border-radius: 15px;
+  --background: transparent;
+  --color: #f79d00;
+  --border-color: #f79d00;
+  --background-activated: #f79d00;
+}

@@ -1,0 +1,102 @@
+<ion-header translucent="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon class="iconback" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" fullscreen="true">
+  <h6>Register here!</h6>
+  <form [formGroup]="signupForm" (ngSubmit)="signup()" *ngIf="testform == true">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input formControlName="name" onkeyup="this.value = this.value.toUpperCase();" type="text"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.name">
+            <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+              <center><small class="error-message">{{error.message}} <span><ion-icon name="alert-circle-outline"></ion-icon></span></small></center>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input formControlName="username" type="text"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.username">
+            <ng-container *ngIf="username.hasError(error.type) && (username.dirty || username.touched)">
+              <center><small class="error-message">{{error.message}} <span><ion-icon name="alert-circle-outline"></ion-icon></span></small></center>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.email">
+            <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+              <center><small class="error-message">{{error.message}} <span><ion-icon name="alert-circle-outline"></ion-icon></span></small></center>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Phone Number</ion-label>
+            <ion-intl-tel-input defaultCountryiso="my" formControlName="phoneNumber">
+            </ion-intl-tel-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.phoneNumber">
+            <ng-container *ngIf="phoneNumber.hasError(error.type) && (phoneNumber.touched)">
+              <center><small class="error-message">{{error.message}} <span><ion-icon name="alert-circle-outline"></ion-icon></span></small></center>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="pass" type="password"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.pass">
+            <ng-container *ngIf="pass.hasError(error.type) && (pass.dirty || pass.touched)">
+              <center><small class="error-message">{{error.message}} <span><ion-icon name="alert-circle-outline"></ion-icon></span></small></center>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input formControlName="cpass" type="password"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.cpass">
+            <ng-container *ngIf="cpass.hasError(error.type) && (cpass.dirty || cpass.touched)">
+              <center><small class="error-message">{{error.message}} <span><ion-icon name="alert-circle-outline"></ion-icon></span></small></center>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="signupbtn" [disabled]="!signupForm.valid" type="submit" expand="block">Sign Up</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  
+</ion-content>

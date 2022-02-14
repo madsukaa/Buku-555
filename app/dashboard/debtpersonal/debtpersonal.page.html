@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon class="iconback" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Personal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Name / Title</ion-label>
+          <ion-input mode="ios" type="text" onkeyup="this.value = this.value.toUpperCase();" [(ngModel)]="name" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input mode="ios" type="text" [(ngModel)]="desc" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="test" position="fixed">Amount</ion-label>
+          <ion-icon slot="end" name="remove-circle-outline" (click)="dec()"></ion-icon>
+          <ion-input mode="ios" class="test2" slot="end" type="number" [(ngModel)]="amount" min="0" required><span>RM</span></ion-input>
+          <ion-icon slot="end" name="add-circle-outline" (click)="inc()"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="fixed">Due date</ion-label>
+          <ion-datetime slot="end" mode="ios" displayFormat="DD-MM-YYYY" placeholder="Select Date" min="2021" [(ngModel)]="duedate" required></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="fixed">Type</ion-label>
+          <ion-select [interfaceOptions]="typeOption" interface="action-sheet" placeholder="Select One" slot="end" [(ngModel)]="type" required>
+            <ion-select-option>Lend</ion-select-option>
+            <ion-select-option>Borrow</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="outline" class="addbtn" (click)="adddebt()">ADD</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

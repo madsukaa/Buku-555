@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Category</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="debtbg">
+  <div class="category" *ngIf="category == true">
+    <ion-card (click)="debtpersonal()">
+      <ion-card-title>PERSONAL</ion-card-title>
+      <img src="assets/img/1.png" />
+    </ion-card>
+    <ion-card (click)="debtfriend()">
+      <ion-card-title>FRIEND</ion-card-title>
+      <img src="assets/img/2.png" />
+    </ion-card>
+  </div>
+</ion-content>
